@@ -1,10 +1,12 @@
 # Array & Linked list project by using tkinter(GUi)
 
 
-import tkinter as tk     # import tkinter library for (GUI)
+import tkinter as tk   # import tkinter library for (GUI)
 from tkinter import *
 from tkinter import messagebox
-import subprocess     # Button based sound for MacOS
+import subprocess   # Button based sound for MacOS
+
+
 
 # Node class for Creating individual node
 class Node:
@@ -23,8 +25,8 @@ class LinkedList:
         new_node.next = self.head
         self.head = new_node
 
-        # Add an element at the end of a linked list 
-
+    
+    # Add an element at the end of a linked list 
     def add_end(self, data):
         new_node = Node(data)
         if self.head is None:
@@ -160,12 +162,13 @@ class Ssd(LinkedList):
         self.array = []
         self.home_interface()
 
-    # Button based sound play for the Home Window
+    # Button based sound play method for the Home Window (Array, Linked list) button
     def play_sound(self):
 
         sound_file = "/System/Library/Sounds/Glass.aiff"
         subprocess.call(["afplay", sound_file])
 
+    # Home page backend
     def home_interface(self):
 
         self.current_interface = 0
@@ -180,6 +183,7 @@ class Ssd(LinkedList):
 
         tk.Button(self.ssd, text="X", fg="red", relief="groove", bd=1, command=self.ssd.destroy).place(x=860, y=0)
 
+    # GUI functionality
     def array_interface(self):
 
         self.ary = tk.Toplevel(bg="rosy brown")
@@ -195,11 +199,13 @@ class Ssd(LinkedList):
         tk.Button(self.ary, text="Back", fg="green", highlightbackground='green', command=self.ary.destroy).place(x=375, y=115)
         self.play_sound()
 
+    # Array Size
     def create_array(self):
 
         self.array_size = int(self.array_size_entry.get())
         self.array_interface_2()
 
+    # Array element
     def array_interface_2(self):
 
         self.current_interface = 2
@@ -214,6 +220,7 @@ class Ssd(LinkedList):
         tk.Button(self.ary, text="Next", fg="chocolate", highlightbackground='chocolate', command=self.show_array).place(x=440, y=350)
         tk.Button(self.ary, text="Back", fg="green", highlightbackground='green', command=self.ary.destroy).place(x=360, y=350)
 
+    # Show Array
     def show_array(self):
 
         self.out = tk.Toplevel(bg="rosy brown")
