@@ -1,11 +1,12 @@
 # Array & Linked list project by using tkinter(GUi)
 
-import tkinter as tk
+
+import tkinter as tk     # import tkinter library for (GUI)
 from tkinter import *
 from tkinter import messagebox
-import subprocess
+import subprocess     # Button based sound for MacOS
 
-
+# Node class for Creating individual node
 class Node:
     def __init__(self, data=None):
         self.data = data
@@ -16,10 +17,13 @@ class LinkedList:
     def __init__(self):
         self.head = None
 
+    # Add element at the beginning in a linked list 
     def add_begin(self, data):
         new_node = Node(data)
         new_node.next = self.head
         self.head = new_node
+
+        # Add an element at the end of a linked list 
 
     def add_end(self, data):
         new_node = Node(data)
@@ -31,6 +35,7 @@ class LinkedList:
                 n = n.next
             n.next = new_node
 
+    # Add node after a particular node
     def add_after_x(self, data, x):
         n = self.head
         while n is not None:
@@ -45,6 +50,7 @@ class LinkedList:
             new_node.next = n.next
             n.next = new_node
 
+    # Add node after a particular node
     def add_before_x(self, data, x):
         if self.head is None:
             messagebox.showerror("Error", "Linked list is empty, So we can't add before any nodes!")
@@ -66,7 +72,8 @@ class LinkedList:
             new_node = Node(data)
             new_node.next = n.next
             n.next = new_node
-
+            
+    # Delete a particular node
     def delete_node(self, data):
         curr_node = self.head
         prev_node = None
@@ -86,12 +93,15 @@ class LinkedList:
             curr_node = curr_node.next
         return False
 
+    # Delete the first node of the linked list
     def delete_begin(self):
         if self.head is None:
             messagebox.showerror("Error", "Linked list is empty, So we can't delete nodes!")
         else:
             self.head = self.head.next
 
+    
+    # Delete the last node of the linked list
     def delete_end(self):
         if self.head is None:
             messagebox.showerror("Error", "Linked list is empty, So we can't delete nodes!")
@@ -103,7 +113,8 @@ class LinkedList:
             while n.next.next is not None:
                 n = n.next
             n.next = None
-
+   
+    # For searching element
     def search_element(self, data):
         n = self.head
         loc = 0
@@ -113,7 +124,8 @@ class LinkedList:
             n = n.next
             loc += 1
         return None
-
+    
+    # For update element
     def update_element(self, old_data, new_data):
         n = self.head
         while n is not None:
@@ -123,7 +135,7 @@ class LinkedList:
             n = n.next
         return False
 
-
+    # Display linked list
     def display_list(self):
         n = self.head
         while n is not None:
