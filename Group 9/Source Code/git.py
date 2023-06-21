@@ -220,7 +220,7 @@ class Ssd(LinkedList):
         tk.Button(self.ary, text="Next", fg="chocolate", highlightbackground='chocolate', command=self.show_array).place(x=440, y=350)
         tk.Button(self.ary, text="Back", fg="green", highlightbackground='green', command=self.ary.destroy).place(x=360, y=350)
 
-    # Show Array
+    # Show Array Functionality for GUI
     def show_array(self):
 
         self.out = tk.Toplevel(bg="rosy brown")
@@ -606,7 +606,7 @@ class Ssd(LinkedList):
             ["Add After X", "Add Before X", "Add Begin", "Add End"]
         ]
 
-        # Function for controlling the button clicks
+        # Function for handling the button clicks
         def button_click(data):
 
             if data.isdigit():
@@ -645,7 +645,8 @@ class Ssd(LinkedList):
                 display_list()
                 clear_entries()
 
-
+        
+        # When entry box Clicked then clear the entry placeholder
         def clear_entries():
             entryBox.delete(0, END)
             entryX.delete(0, END)
