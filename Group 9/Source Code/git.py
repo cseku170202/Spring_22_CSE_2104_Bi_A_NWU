@@ -248,6 +248,7 @@ class Ssd(LinkedList):
         tk.Button(self.out, text="X", fg="red", relief="groove", bd=1, command=self.ssd.destroy).place(x=860, y=0)
 
 
+    # Insert Operation
     def array_insert(self):
 
         self.insrt = tk.Toplevel(bg="azure4")
@@ -279,6 +280,7 @@ class Ssd(LinkedList):
         tk.Button(self.insrt, text="Go to Array Home", highlightbackground='deep sky blue', fg="black",
                   activeforeground="red", activebackground="grey", command=self.insrt.destroy).pack()
 
+    # Delete Operation
     def array_delete(self):
 
         self.dlt = tk.Toplevel(bg="azure4")
@@ -295,6 +297,7 @@ class Ssd(LinkedList):
         tk.Button(self.dlt, text="<", fg="green", relief="groove", bd=1, command=self.dlt.destroy).place(x=0, y=0)
         tk.Button(self.dlt, text="X", fg="red", relief="groove", bd=2, command=self.ssd.destroy).place(x=860, y=0)
 
+    # Deleting element as Index number
     def delete_by_index(self):
 
         self.dlt.destroy()
@@ -328,6 +331,7 @@ class Ssd(LinkedList):
             tk.Label(self.dlt_idx, text="Invalid index. Please enter a valid index.", font="Sans-serif, 20 bold",
                      bg="azure4").pack()
 
+    # Deleting element as value
     def delete_by_value(self):
 
         self.dlt.destroy()
@@ -361,6 +365,7 @@ class Ssd(LinkedList):
                      font="Sans-serif, 20 bold", bg="azure4").pack()
 
 
+    # For searching Operation
     def array_search(self):
 
         self.src = tk.Toplevel(bg="azure4")
@@ -392,6 +397,7 @@ class Ssd(LinkedList):
             tk.Label(self.src, text=self.array_search_element.get() + " not found in the Array:" + str(self.array),
                      font="Sans-serif, 20 bold", bg="azure4").pack(pady=5)
 
+    # For Update array element
     def array_update(self):
 
         self.updt = tk.Toplevel(bg="azure4")
